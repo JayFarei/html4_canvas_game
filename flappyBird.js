@@ -19,6 +19,7 @@ var fg = new Image(); //foreground
 var pipeNorth = new Image();
 var pipeSouth = new Image();
 
+// sourcing images
 bird.src = "images/bird.png";
 bg.src = "images/bg.png";
 fg.src = "images/fg.png";
@@ -35,8 +36,8 @@ const pipeNorthHeight = 242;
 
 
 // Defining gap between pipes
-var gap = 80; 
-var constant = pipeNorth.height + gap; // defining Y coordinate by adding a gap from north pipe Y
+var gap = 100; 
+var constant = pipeNorthHeight + gap; // defining Y coordinate by adding a gap from north pipe Y
 
 
 // Starting position & bird gravity
@@ -121,7 +122,7 @@ function draw() {
 
     ctx.drawImage(fg,0,canvas.height-fg.height); // to align it at the bottom
 
-    ctx.drawImage(bird,bX,bY)
+    ctx.drawImage(bird,bX,bY,50,50)
 
     // updating bird Y position by the linear gravity
     bY += bGravity;
